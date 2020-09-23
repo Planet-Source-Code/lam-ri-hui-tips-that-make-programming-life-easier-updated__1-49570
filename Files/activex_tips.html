@@ -1,0 +1,300 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>ActiveX Programming Tips</title>
+<style>
+<!--
+ div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><u><b><font size="7">ActiveX Programming Tips</font></b></u></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">When running an ActiveX EXE or 
+DLL project, you should deselect the Compile On Demand option in the General tab 
+of the Options dialog box. This setting ensures that no compilation or syntax 
+errors can occur while the program is providing its objects to client 
+applications, which in most cases would force you to stop both the client and 
+the server applications, fix the error, and restart. If you don't want to modify 
+this IDE setting, you can force a full compilation by pressing the Ctrl+F5 
+combination instead of the F5 key or by issuing the Run With Full Compile 
+command from the Run menu. </span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">Visual Basic can create 
+stand-alone type libraries, but you need the Enterprise Edition to do so. The 
+trick is simple: In the Component tab of the Project Properties dialog box, tick 
+the Remote Server Files check box, and then recompile the project. Visual Basic 
+produces a TLB file with the same base name as the project's EXE file. </span>
+</p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">You can cut down the time 
+necessary to register a DLL server using the following trick. Open Windows 
+Explorer and navigate to the C:\Windows\SendTo directory (assuming that your 
+operating system is installed in the C:\Windows directory). Then create a 
+shortcut to the Regsvr32.exe file and label it <i>RegisterActiveX DLL</i>, or 
+whatever you prefer. After you've done this, you can easily register any DLL 
+component by right-clicking on it and selecting the Register command from the 
+SendTo menu. To easily unregister a DLL, you can create the following two-line 
+batch file: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">C:\VisStudio\Common\Tools\Vb\Regutils\regsvr32 
+    /U %1</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">Exit</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">and add a shortcut to it in the 
+SendTo menu. (Remember to use a path that matches your system directory 
+configuration, of course.)</span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">You might intentionally expose 
+properties that are duplicated in the Extender object so that users of your 
+ActiveX control can find that property regardless of what programming language 
+they're using. For example, you can define a <i>Tag </i>property (of type String 
+or Variant) so that your control provides it even when it runs in an environment 
+other than Visual Basic. </span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">The Visual Basic documentation 
+omits an important detail about focus management inside ActiveX controls with 
+mulle constituent controls. If the ActiveX control is the only control on the 
+form that can receive the focus and the user presses the Tab key on the last 
+constituent control, the focus won't automatically shift on the first 
+constituent control as the user would expect. So to have such an ActiveX control 
+behave normally, you should add at least one other control on the form. If you 
+don't want to display another control, you should resort to the following trick: 
+Create a CommandButton (or any other control that can get the focus), move it 
+out of sight using a large negative value for the <i>Left </i>or <i>Top </i>
+property, and then add these statements in its <i>GotFocus </i>event procedure:
+</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Private Sub Command1_GotFocus()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    MyControl1.SetFocus&nbsp;&nbsp; ' Manually move the focus</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' to the ActiveX control.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">End 
+    Sub</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">Sometimes you might want to add 
+spaces and other symbols inside an enumerated value to make it more readable in 
+the Properties window. For example, the <i>FillStyle </i>property includes 
+values such as <i>Horizontal Line </i>or <i>Diagonal Cross</i>. To expose 
+similar values in your ActiveX controls, you have to enclose Enum constants 
+within square brackets, as in the following code: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">Enum 
+    MyColors</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    Black = 1</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    [Dark Gray]</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    [Light Gray]</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    White </span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">End 
+    Enum</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">Here's another idea that you 
+might find useful: If you use an enumerated constant name whose name begins with 
+an underscore, such as <i>[_HiddenValue]</i>, this value won't appear by default 
+in the Object Browser. However, this value does appear in the Properties window, 
+so this trick is especially useful for enumerated properties that aren't 
+available at design time. </span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">Because you can select only one 
+item in the procedure ID field, it seems to be impossible to duplicate the 
+behavior of Visual Basic's TextBox and Label controls, which expose a <i>Text
+</i>or <i>Caption </i>property that's immediately updated by the Properties 
+window and is the default property at the same time. You can work around this 
+problem by defining a hidden property, make it the default property, and have it 
+delegate to the <i>Text </i>or <i>Caption</i> property: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">' 
+    Make this property the default property, and hide it.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Public Property Get Text_() As String</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    Text_ = Text</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">End 
+    Property</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Public Property Let Text_(ByVal newValue As String)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    Text = newValue</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">End 
+    Property</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">&nbsp;The Visual Basic language 
+lacks a function that lets you distinguish between the two modes, but you can 
+take advantage of the fact that all the methods of the Debug object aren't 
+compiled in EXE programs and therefore are executed only when the application is 
+running in the IDE. Here's an example of this technique: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Function InterpretedMode() As Boolean</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    On Error Resume Next</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    Debug Print 1/0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' This causes an error</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    InterpretedMode = (Err &lt;&gt; 0)&nbsp;&nbsp;&nbsp; ' but only inside the IDE.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    Err Clear&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Clear the error code. </span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">End 
+    Function</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">The preceding code is based on a 
+routine that appeared in the Tech s supplement of the Visual Basic Programmer's 
+Journal. </span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">You can navigate many kinds of 
+documents, not just HTML pages. For example, Internet Explorer can display 
+Microsoft Word and Microsoft Excel files, so you can use it as a document 
+browser, as the following code demonstrates: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Hyperlink.NavigateTo &quot;C:\Documents\Notes.Doc&quot;</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">If you're writing a control that 
+can be used on both regular forms and HTML pages, you need to know which 
+container it's running in. You can do this by looking at the object returned by 
+the Parent object: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">' 
+    Test if the control runs in an HTML page.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">If 
+    TypeName(Parent) = &quot;HTMLDocument&quot; Then ...</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">You can quickly learn which 
+ActiveX controls on your machine are safe for initialization or for scripting by 
+using the OleView utility that comes with Visual Studio. This is the portion of 
+the Registry that marks a control as safe: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    HKEY_CLASSES_ROOT</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp; \CLS</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    \&lt;your control's CLSID&gt;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \Implemented Categories</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \{7DD95802-9882-11CF-9FA9-00AA006C42C4}</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; \{7DD95801-9882-11CF-9FA9-00AA006C42C4}</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">The last two lines of the 
+listing indicate safe for initialization and safe for scripting, respectively. 
+Once you know how this information is recorded in the Registry, you can use the 
+Regedit utility to modify these setting by adding or removing these keys. </span>
+</p>
+<hr>
+<p><a href="../Main.html">Back</a></p>
+
+</body>
+
+</html>

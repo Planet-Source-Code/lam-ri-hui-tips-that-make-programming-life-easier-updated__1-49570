@@ -1,0 +1,1017 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>General Tips</title>
+<style>
+<!--
+ div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><b><u><font size="7">General Tips</font></u></b></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can quickly show the code 
+window associated with a form or another designer by pressing the F7 function 
+key while the focus is on the designer. Similarly, if you have opened the code 
+window related to a designer, press the Shift-F7 key combination to display the 
+associated designer.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">No menu command or toolbar icon 
+lets you delete the current contents of the Immediate window. The quickest way 
+to do it is by pressing the Ctrl+A key combination to select the Immediate 
+window's entire contents, after which you press the Delete key to delete it or 
+simply begin typing to replace the contents with whatever you want to type in 
+instead.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The Edit toolbar is unusual 
+because it contains two commands that aren't available through menu commands—the 
+Comment Block and Uncomment Block commands, which are useful when you're testing 
+an application. (See Figure 1-5 for an example of a routine that has been 
+commented using the Comment Block command.) For this reason, you might want to 
+make the Edit toolbar visible.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you need to create mulle 
+controls of the same type, you can follow this three-step procedure: First, 
+click on the control's icon on the Toolbox window while you keep the Ctrl key 
+pressed. Next, draw mulle controls by clicking the left button on the form's 
+surface and then dragging the cursor. Finally, when you're finished creating 
+controls, press the Escape key or click the Pointer icon in the upper left 
+corner of the Toolbox.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">There is one handy but 
+undocumented technique for quickly selecting a given property of a control. You 
+just have to select the control on the form and press the Ctrl+Shift+<i>x</i> 
+key, where <i>x </i>is the first letter in the property's name. For instance, 
+select a Label control, and then press Ctrl+Shift+C to display the Properties 
+window and select the <i>Caption</i> property in one operation. Pressing the 
+Ctrl+Shift+C key again moves the focus to the next property whose name begins 
+with the C character, and so on in a cyclic fashion.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">A quick way to select all the 
+controls on a form is to click anywhere on the form and press the Ctrl+A key 
+combination. After selecting all controls, you can deselect a few of them by 
+clicking on them while pressing the Shift or Ctrl key. Note that this shortcut 
+doesn't select controls that are contained in other controls.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you want to copy a number of 
+properties from one control to one or more other controls, you can select the 
+control you want to copy from, press Shift and select the other controls, press 
+F4 to show the Properties window, and triple-click the name of the property you 
+want to copy. Note that you must click the name of the property on the left, not 
+the value cell on the right. The values of the properties on which you 
+triple-click are copied from the source controls to all the other selected 
+controls. This technique doesn't work with all the items in the Properties 
+window.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">When a control is created from 
+the Toolbox, its <i>Font</i> property reflects the font of the parent form. For 
+this reason, you can often avoid individual font settings by changing the form's
+<i>Font</i> property before placing any controls on the form itself.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">A ComboBox control is peculiar in 
+that its height is determined by the system and depends on its <i>Font</i> 
+property. Therefore, if you have ComboBox and single-line TextBox controls on 
+the same form, you should use either one of the last two techniques that I just 
+described to resize the TextBox controls to reflect the height of the ComboBox 
+control(s) placed on the form. This will give your form a consistent look.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">Visual Basic 5 and 6 also come 
+with an add-in that permits you to arrange the <i>TabIndex </i>property for all 
+the controls on the current form. This add-in is provided in source code format, 
+in the TabOrder.vbp project located in the Samples\CompTool\AddIns subdirectory. 
+To use this add-in, you must compile and install it manually. This tool lets you 
+save a lot of time when arranging the Tab order for forms with many controls.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">Many developers, especially those 
+with prior experience in the QuickBasic language, are accustomed to extracting 
+numeric values from character strings using the <i>Val</i> function. The <i>CDbl</i> 
+or <i>CSng </i>conversion functions are better choices in most cases, however, 
+because they're <i>locale-aware </i>and correctly interpret the number in those 
+countries where the decimal separator is the comma instead of the period. Even 
+more important, the <i>CDbl </i>or <i>CSng</i> functions conveniently skip over 
+separator characters and currency symbols (as in $1,234), whereas the <i>Val</i> 
+function doesn't.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">Most controls change their 
+appearance when they're disabled. Generally speaking, this is a useful practice 
+because the user can understand at first glance which controls he or she can act 
+on. If you have a good reason to disable a control but still display it in an 
+active state, you can place the control inside a container (a Frame or a 
+PictureBox, for example) and then set the container's <i>Enabled</i> property to 
+False. Visual Basic will disable all contained controls, but they will continue 
+to appear in an enabled state. This trick works better if you also set the 
+container's <i>BorderStyl</i>e property to 0-None. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The <i>Move</i> method should 
+always be preferred to individual property assignment for at least two reasons: 
+This operation is two to three times faster than four distinct assignments, and 
+if you're modifying the <i>Width</i> and <i>Height</i> properties of a form, 
+each individual property assignments would fire a separate <i>Resize</i> event, 
+thus adding a lot of overhead to your code. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The <i>SetFocus</i> method is 
+often used in the <i>Form_Load</i> event procedure to programmatically set which 
+control on the form should receive the focus when the form initially appears. 
+Because you can't use <i>SetFocus</i> on invisible controls, you're forced to 
+make the form visible first: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Form_Load()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Show&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Make the form visible.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Text1.SetFocus</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">Here's another possible solution:</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Form_Load()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Text1.TabIndex = 0&nbsp; </span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">Note that if <i>Text1</i> isn't 
+able to receive the input focus (for example, its <i>TabStop</i> property is set 
+to False), Visual Basic automatically moves the focus on the next control in the 
+Tab order sequence, without raising any error. The drawback of this second 
+approach is that it affects the Tab order of all other controls on the form.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">While you shouldn't assign 
+separate effects to click and double-click actions on the same control, here's a 
+simple method to work around the problem of finding out what the user actually 
+did: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' A module-level variable</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Dim isClick As Boolean</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Form_Click()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Dim t As Single</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; isClick = True</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Wait for the second click for half a second.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; t = Timer</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Do</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DoEvents</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' If the DblClick procedure canceled this event, </span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' bail out.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If Not isClick Then Exit Sub</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' The next test accounts for clicks just before </span>
+    <span style="font-size:10.0pt;
+   font-family:&quot;Courier New&quot;;color:black">midnight</span><span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Loop Until Timer &gt; t + .5 Or Timer &lt; t</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Do your single-click processing here.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ...</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Form_DblClick()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Cancel any pending click.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; isClick = False</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Do your double-click processing here.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ...</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">While you can't edit the <i>
+KeyCode</i> parameter and let the modified value affect the program, here's a 
+trick that, in most cases, lets you discard an unwanted key in TextBox controls:
+</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Text1_KeyDown(KeyCode As Integer, Shift As Integer)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; If KeyCode = vbKeyDelete Then</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Make the control read-only; this actually</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' discards the key.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Text1.Locked = True</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; End If</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Text1_KeyUp(KeyCode As Integer, Shift As Integer)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Restore normal operation.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Text1.Locked = False</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">To create a captionless resizable 
+window, you must set the <i>ControlBox</i>, <i>MinButton</i>, and <i>MaxButton</i> 
+properties to False and the <i>Caption</i> property to an empty string. If you 
+assign a non-empty string to the <i>Caption</i> property at run time, Visual 
+Basic creates the form's title bar on the fly. Assigning it an empty string at 
+run time makes the title bar disappear again. You can't move a captionless form 
+using the mouse as you normally do with other types of windows. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If <i>AutoRedraw</i> is set to 
+True, Visual Basic creates a persistent bitmap as large as the largest possible 
+size for the form, which means the entire screen for resizable windows. 
+Therefore, you can limit the memory overhead caused by the persistent bitmap if 
+you create smaller forms and set their <i>BorderStyle </i>property to 1-Fixed 
+Single or 3-Fixed Dialog. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can use semicolons instead of 
+the &amp; operator and commas instead of the vbTab constant. But if you purposely 
+stick to a standard syntax and stay clear of special features of the <i>Print</i> 
+method, you can easily recycle your arguments and pass them to your custom 
+methods or assign them to the <i>Caption</i> property of a Label. This can save 
+you some time later, when you want to turn a quick-and-dirty prototype into a 
+regular application. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">When you want to append text to a 
+TextBox control, you should use the following code (instead of using the 
+concatenation operator) to reduce flickering and improve performance: </span>
+</p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Text1.SelStart = Len(Text1.Text)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Text1.SelText = StringToBeAdded</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">One Visual Basic operator has 
+great potential when it comes time to validate complex strings but is neglected 
+by most Visual Basic developers. Let's say you have a product code that consists 
+of two uppercase characters followed by exactly three digits. You might think 
+that you need some complex string functions to validate such a string until you 
+try the <i>Like</i> operator, as follows: </span></p>
+<p class="MsoNormal"><span style="color:black">If &quot;AX123&quot; Like &quot;[A-Z][A-Z]###&quot; 
+Then Print &quot;OK&quot; </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The <i>Format</i> function lets 
+you retrieve many locale-dependent characters and separators. </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Format$(0.1, &quot;.&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Decimal separator</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Format$(1, &quot;,&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Thousand separator</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Mid$(Format(#1/1/99#, &quot;short date&quot;), 2, 1)&nbsp; ' Date separator</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">You can also determine whether 
+the system uses dates in &quot;mm/dd/yy&quot; (U.S.) format or &quot;dd/mm/yy&quot; (European) 
+format, using this code:</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    If Left$(Format$(&quot;12/31/1999&quot;, &quot;short date&quot;), 2) = 12 Then</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' mm/dd/yy format</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Else</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' dd/mm/yyyy format</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End If</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">There's no direct way to 
+determine the currency symbol, but you can derive it by analyzing the result of 
+this function:</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Format$(0, &quot;currency&quot;)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Returns &quot;$0.00&quot; in US</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">It isn't difficult to write a 
+routine that internally uses the information I've just given you to extract the 
+currency symbol as well as its default position (before or after the number) and 
+the default number of decimal digits in currency values. Remember, in some 
+countries the currency symbol is actually a string of two or more characters.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can insert a literal &amp; 
+character in a Label control's <i>Caption</i> property by doubling it. For 
+example, to see Research &amp; Development you have to type <i>&amp;Research &amp;&amp; 
+Development</i>. Note that if you have mulle but isolated &amp;s, the one that 
+selects the hot key is the last one and all others are ignored. This&nbsp; applies to 
+all the controls that expose a <i>Caption</i> property. (The &amp; has no special 
+meaning in forms' Caption properties, however.) </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you want to load many items in 
+a list box but don't want to create an array, you can resort to Visual Basic's
+<i>Choose</i> function, as follows: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    For i = 1 To 5</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; List1.AddItem Choose(i, &quot;America&quot;, &quot;Europe&quot;, &quot;Asia&quot;, _</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &quot;Africa&quot;, &quot;Australia&quot;)&quot;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Next</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">Some special cases don't even 
+require you to list individual items:</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' The names of the months (locale-aware)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    For i = 1 To 12</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; List1.AddItem MonthName(i)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Next</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' The names of the days of the week (locale-aware)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    For i = 1 To 7</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; List1.AddItem WeekDayName(i)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Next</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">In general, Visual Basic doesn't 
+provide a way to determine the size of a bitmap loaded into a PictureBox 
+control. But you can derive this information if you set the control's <i>
+AutoSize</i> property to True and then read the control's <i>ScaleWidth</i> and
+<i>ScaleHeight</i> properties. If you don't want to resize a visible control 
+just to learn the dimensions of a bitmap, you can load it into an invisible 
+control, or you can use this trick, based on the fact that the <i>Picture </i>
+property returns an StdPicture object, which in turn exposes the <i>Height </i>
+and <i>Width </i>properties: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' StdPicture's Width and Height properties are expressed in</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' Himetric units. </span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    With Picture1</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; width = CInt(.ScaleX(.Picture.Width, vbHimetric, vbPixels))</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; height = CInt(.ScaleY(.Picture.Height, vbHimetric, _</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; vbPixels))</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End With</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can take advantage of the <i>
+x </i>and <i>y</i> arguments in a <i>PopupMenu </i>method to make your program 
+more Windows compliant, and show your pop-up menus over the control that has the 
+focus when the user presses the Application key (the key beside the Windows key 
+on the right side of a typical extended keyboard, such as the Microsoft Natural 
+Keyboard). But remember that Visual Basic doesn't define any key-code constant 
+for this key. Here's how you must proceed: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub List1_KeyDown(KeyCode As Integer, Shift As Integer)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; If KeyCode = 93 Then</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' The system pop-up menu key has been pressed.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Show a pop-up menu near the list box's center.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; PopupMenu mnuListPopup, , List1.Left + _</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List1.Width / 2, List1.Top + List1.Height / 2</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; End If</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you want to write faster 
+programs, always access a Collection's items using their string keys rather than 
+their numeric indices. As counterintuitive as it may appear, using string keys 
+is almost always faster than using numeric indices, especially if the Collection 
+has thousands of elements and the one you're interested in isn't near the 
+beginning of it. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">A faster way to remove all the 
+items in a Collection is to destroy the Collection object itself by setting it 
+to Nothing or to another fresh, new instance: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' Both these lines destroy the current contents</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' of the Collection.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Set EmployeeNames = Nothing</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Set EmployeeNames = New Collection</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">This approach works only if there 
+isn't any other object variable pointing to the Collection object, however. If 
+you aren't sure of this, the only safe way to remove all items is the loop I 
+showed you previously.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">Always use an Integer or Long 
+variable as the controlling variable of a <i>For...Next</i> loop because they're 
+faster than a Single or a Double controlling variable, by a factor of 10 or 
+more. If you need to increment a floating-point quantity, the most efficient 
+technique is explained in the next example. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The VBA documentation 
+consistently omits the trailing <i>$</i> character in all string functions and 
+invites you to use the new <i>$</i>-less functions. <i>Don't do it!</i> A <i>$</i>-less 
+function returns a Variant that contains the string result, which means in most 
+cases the Variant must be reconverted to a string before it can be reused in 
+expressions or assigned to a String variable. This is a time-consuming process 
+that gives you nothing in return. Informal benchmarks show that, for example, 
+the <i>Left$</i> function is up to twice as fast as its <i>$</i>-less 
+counterpart. A similar reasoning applies to other functions that exist in both 
+forms, including <i>LCase</i>, <i>UCase</i>, <i>LTrim</i>, <i>RTrim</i>, <i>Trim</i>,
+<i>Chr</i>, <i>Format</i>, <i>Space</i>, and <i>String</i>. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can also use the <i>Dir$</i> 
+function to indirectly test for the existence of a file or a directory, using 
+the following functions: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Function FileExists(filename As String) As Boolean</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; On Error Resume Next</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; FileExists = (Dir$(filename) &lt;&gt; &quot;&quot;)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Function</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Function DirExists(path As String) As Boolean</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; On Error Resume Next</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; DirExists = (Dir$(path &amp; &quot;\nul&quot;) &lt;&gt; &quot;&quot;)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Function</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">While the code in <i>FileExists</i> 
+is rather straightforward, you might be puzzled by <i>DirExists</i>: where does 
+that &quot;<i>\nul</i>&quot; string come from? The explanation dates back to MS-DOS days 
+and its special filenames &quot;<i>nul</i>&quot;, &quot;<i>con</i>&quot;, and so on. These names 
+actually refer to special devices (the null device, the console device, and so 
+on) that appear in any directory you search, provided that the directory 
+actually exists. This approach works with any directory, whereas using <i>Dir$(</i>&quot;<i>*.*</i>&quot;<i>)</i> 
+would fail when you're testing the existence of empty directories.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you don't want to get involved 
+with lots of additional evaluations when writing and reading data in a binary 
+file, you can follow a shorter path using an intermediate Variant variable. If 
+you store a value of any type (other than object) into a Variant variable and 
+then write the variable to a binary file, Visual Basic writes the type of the 
+variable (that is, the <i>VarType</i> return value) and then the data. If the 
+variable holds a string or an array, Visual Basic also stores enough information 
+to read exactly the necessary number of bytes, freeing you from additional read 
+statements: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Dim v As Variant, s(100) As String, i As Long</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' Fill the s() array with data... (omitted)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Open &quot;c:\binary.dat&quot; For Binary As #1</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    v = s()&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Store the array in a Variant variable,</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Put #1, , v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' and write that to disk.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    v = Empty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Release memory.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' Read data back.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Dim v2 As Variant, s2() As String</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Get #1, 1, v2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Read data in the Variant variable,</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    s2() = v2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' and then move it to the real array.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    v2 = Empty&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Release memory. </span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Close #1</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">This approach also works with 
+multidimensional arrays.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can reduce the typing and the 
+guesswork when using these sort-of constructors if you gather them into a single 
+BAS module and give this module a short name, such as <i>Class</i> or <i>Factory</i>. 
+(You can't use <i>New</i>, sorry.) Then when you need to type the name of a 
+constructor method, you just type <i>Class</i> and let Microsoft IntelliSense 
+guide you through the list of constructor methods contained in that module. You 
+can use this approach anytime you don't remember the name of a procedure in a 
+module. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">Oddly, Visual Basic documentation 
+doesn't mention that class modules also support their own <i>Description</i> and
+<i>HelpContextID</i> attributes and therefore doesn't explain how you can modify 
+them. The trick is simple: Right-click on the class name in the leftmost pane of 
+the Object Browser, and select the Properties command from the pop-up menu.
+</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">As a rule, allocating and 
+releasing the instance data block for an object is a relatively slow operation. 
+If your class module executes a lot of code in its <i>Class_Initialize</i> 
+event—for example, it has to retrieve data from a database, the Registry, or an 
+INI file—this overhead can become critical. For this reason, try to keep an 
+instance alive by assigning it to a global object variable and release it only 
+when you're sure that you won't need that object anymore. (Or let Visual Basic 
+automatically set the variable to Nothing when the application comes to a 
+natural termination.) You might also provide a special method—for example, <i>
+Reset</i>—that reinitializes all private variables without having to create a 
+new instance. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You often use the <i>TypeOf ...Is</i> 
+statement to avoid errors when assigning object variables, as in this code:
+</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ' OBJ holds a reference to a control.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Dim lst As ListBox, cbo As ComboBox</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    If TypeOf obj Is ListBox Then</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Set lst = obj</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    ElseIf TypeOf Obj Is ComboBox Then</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Set cbo = obj</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End If</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">But here's a faster and more 
+concise way: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Dim lst As ListBox, cbo As ComboBox</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    On Error Resume Next</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Set lst = obj&nbsp;&nbsp;&nbsp;&nbsp; ' The assignment that fails will leave</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Set cbo = obj&nbsp;&nbsp;&nbsp;&nbsp; ' the corresponding variable set to Nothing.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    On Error Goto 0&nbsp;&nbsp; ' Cancel error trapping.</span></td>
+  </tr>
+</table>
+
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you're using the Microsoft OLE 
+DB Provider for SQL Server 6.5, chances are that you can't list the database 
+tables contained in a given SQL Server. This seems to be a bug in this version 
+of the provider, and in fact everything works correctly if you upgrade to the 
+Microsoft OLE DB Provider for SQL Server 7.0. (You need to upgrade just the 
+provider, not the entire SQL Server engine). It turns out, however, that SQL 
+Server 6.5 needs just a little help from us. Use the Find command to locate a 
+copy of the INSTCAT.SQL file on your system. (You should find it in your 
+\Windows\System directory and possibly in other directories as well.) Then 
+import this file in ISQL_w and run the script; at the end of the execution, try 
+again to create a data link, and you'll see that you are now able to correctly 
+list all SQL Server databases.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">When you're building a table, you 
+can create new fields by copying and pasting their attributes from other tables 
+in the database. To select mulle field rows, click on the leftmost (gray) column 
+while pressing the Ctrl or Shift key. (See Figure 8-9.) You can copy the 
+selection using the Ctrl+C key combination and then paste it into another grid 
+using Ctrl+V.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The <i>DataChanged </i>property 
+is independent from the ADO binding mechanism and is correctly managed from 
+Visual Basic even if the control isn't currently bound to a database field. For 
+example, you can exploit this property when you want to determine whether a 
+control's contents have been modified after you have loaded a value in it. If 
+you didn't use this property, you would need to use a form-level Boolean 
+variable and manually set it to True from within the control's <i>Change </i>or
+<i>Click </i>event procedure. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">The <i>Show</i> method supports a 
+second, optional argument that permits you to specify the parent form of the 
+form being shown. When you pass a value to this argument, you achieve two 
+interesting effects: the child form is always shown in front of its parent, even 
+if the parent has the focus, and when the parent form is closed or minimized, 
+all its child forms are also automatically closed or minimized. You can take 
+advantage of this feature to create floating forms that host a toolbar, a 
+palette of tools, a group of icons, and so on. This technique is most effective 
+if you set the <i>BorderStyle</i> property of the child form to 4-Fixed 
+ToolWindow or 5-Sizable ToolWindow. </span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">You can associate a TreeView 
+control (or any control) with an ImageList control located on another form by 
+making the assignment at run time, as shown in this code: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Form_Load()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Set TreeView1.ImageList = AnotherForm.ImageList1</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">This technique allows you to use 
+a group of bitmaps and icons in all the forms of your application without having 
+to duplicate them and thus shrink the size of the EXE file. This way, you save 
+memory and resources at run time.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">If you want to prevent the user 
+from modifying the <i>Checked</i> state of a given Node object, you can't simply 
+reset its <i>Checked</i> property within the <i>NodeCheck</i> event because all 
+changes to this property are lost when the event procedure is exited. You can 
+solve this problem by adding a Timer control on the form and writing this code:
+</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding:.75pt .75pt .75pt .75pt">
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Dim CheckedNode As Node&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' A form-level variable</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub TreeView1_NodeCheck(ByVal Node As MSComctlLib.Node)</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Prevent the user from checking the first Node.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; If Node.Index = 1 Then</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Remember which Node has been clicked on.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set CheckedNode = Node</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ' Let the Timer routine do the job.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Timer1.Enabled = True</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; End If</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    Private Sub Timer1_Timer()</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; ' Reset the Checked property, and then go to sleep.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; CheckedNode.Checked = False</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    &nbsp;&nbsp;&nbsp; Timer1.Enabled = False</span></p>
+    <p class="MsoNormal">
+    <span style="font-size:10.0pt;font-family:&quot;Courier New&quot;;color:black">
+    End Sub</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color:black">This technique is more effective 
+if the Timer's <i>Interval</i> property is set to a small value, such as 10 
+milliseconds.</span></p>
+<div class="MsoNormal" align="center" style="text-align:center">
+  <span style="color:black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color:black">When the <i>ListView Sorted</i> 
+property is True, insert and remove operations are unbearably long. It's much 
+better to set the <i>Sorted</i> property to False, do whatever updates you want, 
+and then reset it to True. Depending on how many items are in the ListView 
+control, you can easily speed up your routines by an order of magnitude. </span>
+</p>
+
+<p class="MsoNormal">&nbsp;</p>
+<hr>
+<p><a href="../Main.html">Back</a></p>
+
+</body>
+
+</html>

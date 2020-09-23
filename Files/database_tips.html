@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Database Programming Tips</title>
+<style>
+<!--
+ div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	margin-left:0cm; margin-right:0cm; margin-top:0cm}
+ table.MsoNormalTable
+	{mso-style-parent:"";
+	font-size:10.0pt;
+	font-family:"Times New Roman"}
+-->
+</style>
+</head>
+
+<body>
+
+<p align="center"><u><b><font size="7">Database Programming Tips</font></b></u></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">If you have used a connection 
+string to open a Recordset and then you want to reuse the same implicit 
+Connection object to open another Recordset, you can exploit the <i>
+ActiveConnection</i> property of the first Recordset, as follows: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">' 
+    Open a new Recordset on the same connection as &quot;rs&quot;.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">Dim 
+    rs2 As New ADODB.Recordset</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    rs2.Open &quot;Publishers&quot;, rs.ActiveConnection</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">&nbsp;</span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">The Visual Basic documentation 
+incorrectly states that the Recordset returned by a Connection object's <i>
+Execute </i>method is always a server-side cursorless Recordset. The truth is 
+that you can also create client-side static cursors if you set the Connection's
+<i>CursorLocation </i>property to adUseClient before creating the Recordset:
+</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">' 
+    This code creates a client-side static cursor.</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">Dim 
+    cn As New ADODB.Connection, rs As New ADODB.Recordset</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    cn.Open &quot;Provider=sqloledb;Data Source=P2;&quot; &amp; _</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    &quot;Initial Catalog=pubs;&quot;, &quot;sa&quot;</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    cn.CursorLocation = adUseClient</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">Set 
+    rs = cn.Execute(&quot;Authors&quot;)</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">I didn't find a way, however, to 
+have an <i>Execute </i>method return a server-side cursor other than the default 
+noncursor.</span></p>
+<p class="MsoNormal"><span style="color: black">&nbsp;</span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">While the database is executing 
+the command, your application can continue its execution as usual. If you need 
+to know whether the operation has completed, you might set a global flag from 
+the <i>ExecuteComplete </i>event or, more simply, test the Connection's <i>State</i> 
+property. Because this property is a bit field, you should use the AND operator, 
+as in the following line of code: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">If 
+    cn.State And adStateExecuting Then. . .</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">When you're working with SQL 
+Server databases, you should be aware that you can generally execute mulle 
+asynchronous commands only if there's no pending transaction and the active 
+command is an action query or is a recordset-returning query that creates a 
+client-side cursor. If these conditions are met, SQL Server silently creates a 
+new connection to serve the new command; otherwise, an error occurs. </span></p>
+<p class="MsoNormal"><span style="color: black">&nbsp;</span></p>
+<div class="MsoNormal" align="center" style="text-align: center">
+  <span style="color: black"><hr size="2" width="100%" align="center"></span>
+</div>
+<p class="MsoNormal"><span style="color: black">Often you need to display a 
+combination of fields in the list portion of a DataCombo or DataList control. 
+For example, you might want to display the supplier's name and city instead of 
+just the name. You can accomplish this by using the SELECT command with a 
+calculated field as the <i>RecordSource </i>property of the secondary ADO Data 
+control: </span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Adodc3.RecordSource = &quot;SELECT SupplierID, CompanyName + ' (' &quot; _</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    &amp; &quot;+ City + ')' AS NameCity FROM Suppliers&quot;</span></td>
+  </tr>
+</table>
+<p class="MsoNormal"><span style="color: black">Don't forget to include the key 
+field in the SELECT command; otherwise, you can't assign it to the <i>
+BoundColumn </i>property. You can use the same trick to sort the list or to 
+format the list in a nonstandard way. For example, you can sort the suppliers 
+list and convert their names to uppercase using the following query:</span></p>
+<table class="MsoNormalTable" border="0" cellpadding="0">
+  <tr>
+    <td style="padding: .75pt">
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">
+    Adodc3.RecordSource = &quot;SELECT SupplierID, UCase(CompanyName + ' (' &quot; _</span></p>
+    <p class="MsoNormal">
+    <span style="font-size: 10.0pt; font-family: Courier New; color: black">&nbsp;&nbsp;&nbsp; 
+    &amp; &quot;+ City + ')') AS NameCity FROM Suppliers ORDER BY CompanyName&quot;</span></td>
+  </tr>
+</table>
+<p class="MsoNormal">&nbsp;</p>
+<hr>
+<p><a href="../Main.html">Back</a></p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>
